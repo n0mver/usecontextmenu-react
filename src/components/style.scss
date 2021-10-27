@@ -1,0 +1,32 @@
+.contextmenu {
+  $contextmenu: '.contextmenu';
+  position: fixed;
+  min-width: 200px;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 10px 0;
+  z-index: 9999;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+  &__item {
+    $item: &;
+    font-size: 14px;
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    margin-bottom: 2px;
+    transition: 0.2s;
+
+    &:hover:not(#{$item}--disabled) {
+      background-color: #f1f1f1;
+    }
+
+    &--disabled {
+      opacity: 0.5;
+      cursor: no-drop;
+    }
+  }
+}
