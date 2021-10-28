@@ -1,6 +1,6 @@
 import {ForwardedRef, forwardRef} from 'react';
 import './style.scss';
-import {ContextMenuProps} from '../types/types';
+import {ContextMenuProps} from '../types';
 import cn from 'classnames';
 
 export const ContextMenu = forwardRef(({
@@ -8,10 +8,17 @@ export const ContextMenu = forwardRef(({
                                     visible,
                                     children,
                                     className,
+                                    style,
                                     ...rest
-                                }: ContextMenuProps, ref: ForwardedRef<HTMLDivElement>) => {
+                                }: ContextMenuProps, ref:ForwardedRef<HTMLDivElement>) => {
 
     const classNames = cn('contextmenu', className);
+
+    const menuStyle = {
+        ...style,
+        left: anchorPoint.x,
+        top: anchorPoint.y,
+    };
 
     return (
         <>
@@ -19,10 +26,7 @@ export const ContextMenu = forwardRef(({
                 <div
                     {...rest}
                     className={classNames}
-                    style={{
-                        top: anchorPoint?.y,
-                        left: anchorPoint?.x,
-                    }}
+                    style={menuStyle}
                     ref={ref}
                     onContextMenu={(e) => e.preventDefault()}
                 >
