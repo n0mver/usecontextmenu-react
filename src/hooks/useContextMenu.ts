@@ -7,6 +7,7 @@ export const useContextMenu = ({onShow = DF, onHide = DF}: useContextMenuProps =
     const [state, setState] = useState<ContextMenuState>({x: 0, y: 0, visible: false});
     const ref = useRef<HTMLDivElement>(null);
     const wasVisible = usePrevious(state.visible);
+
     const onContextMenu = (e: MouseEvent) => {
         const {clientX, clientY} = e;
         e.preventDefault();
@@ -18,7 +19,7 @@ export const useContextMenu = ({onShow = DF, onHide = DF}: useContextMenuProps =
     };
 
     const hide = () => {
-        setState(prevState => ({...prevState, visible: state.visible ? false : state.visible}));
+        setState(prevState => ({...prevState, visible: false}));
     };
 
     useLayoutEffect(() => {
@@ -41,6 +42,7 @@ export const useContextMenu = ({onShow = DF, onHide = DF}: useContextMenuProps =
             window.addEventListener('wheel', hide);
             window.addEventListener('click', hide);
             window.addEventListener('scroll', hide);
+
             if (process.env.NODE_ENV !== 'development') {
                 window.addEventListener('blur', hide);
             }

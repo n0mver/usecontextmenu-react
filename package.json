@@ -1,6 +1,6 @@
 {
   "name": "usecontextmenu-react",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Contextmenu hook in React",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -14,7 +14,8 @@
   "scripts": {
     "start": "rollup -c -w",
     "build": "rollup -c",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "build:example": "npm install && npm run build && cd example && npm install && npm run build"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -56,6 +57,7 @@
   "keywords": [
     "contextmenu",
     "react",
+    "hook",
     "react-contextmenu",
     "rightclick"
   ],

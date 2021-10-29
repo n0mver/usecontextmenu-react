@@ -28,7 +28,7 @@ function App() {
 
     const setRandomPosition = (e: MouseEvent) => {
         e.stopPropagation()
-        visibleOnPosition({x: Math.random() * window.innerWidth, y: Math.random() * window.innerWidth});
+        visibleOnPosition({x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight});
     }
 
     return (

@@ -1,10 +1,20 @@
-#usecontextmenu-react example
+# usecontextmenu-react Example
 
 ## Installation
 
-### `npm install`
+```bash
+npm install
+```
 
 ## Start
 
-### `npm start`
+```bash
+npm start
+```
+
+## Build
+
+```bash
+npm run build
+```
 

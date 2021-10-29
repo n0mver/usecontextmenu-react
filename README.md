@@ -34,7 +34,6 @@ const Example = () => {
     const blockStyle = {
         height: '200px',
         backgroundColor: 'tomato',
-        margin: '30px 0'
     }
     
     return (
@@ -56,9 +55,9 @@ const Example = () => {
 
 ### `useContextMenu({onShow, onHide})`
 
-`onShow` - Called when the menu is visible
+`onShow: () => void` - Called when the menu is visible
 
-`onHide` - Called when the menu is hidden
+`onHide: () => void` - Called when the menu is hidden
 
 This hook returns an object containing the following properties:
 
@@ -66,7 +65,7 @@ This hook returns an object containing the following properties:
 
 `menuProps` - Context menu props
 
-`visibleOnPosition` - Display the context menu on custom position
+`visibleOnPosition({x: number, y: number})` - Display the context menu on custom position. You can provide `x` and `y` coordinates
 
 ## License
 
